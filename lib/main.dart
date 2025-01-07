@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Uygulamam());
+  runApp(const Uygulamam());
 }
 
 class Uygulamam extends StatelessWidget {
@@ -15,61 +15,43 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "Nunito"),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Uygulamam',
-            style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
-          ),
-          backgroundColor: Colors.green,
-          centerTitle: true,
-        ),
-        /*      body: Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrmdIv9U6Vp4y89bmbMn6qxhGP9B_rS82OWw&s",
-            width: 200,
-            fit: BoxFit.fill,
-          ),*/
-        /*  body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Merhaba'),
-              Image.asset('assets/images/dino.jpg'),
-              Image.asset('assets/images/dinoinspace.jpeg'),
-            ],
-          ),
-        ),*/
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  onPressed: () => print('ElevatedButton a Tıkladın!'),
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                  child: Text('Bana Tıkla',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ))),
-              TextButton(
-                  onPressed: () => print('TextButton a Tıkladın!'),
-                  child: Text('Bana Tıkla',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ))),
-              IconButton(
-                  onPressed: () => print('İconButton a Tıkladın!'),
-                  icon: Icon(
-                    Icons.ads_click_sharp,
-                    color: Colors.green,
-                  ))
-            ],
-          ),
-        ),
-      ),
-    );
+        theme: ThemeData(fontFamily: "Nunito"),
+        home: Scaffold(
+            appBar: AppBar(
+              title: const Text(
+                'Uygulamam',
+                style:
+                    TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+              ),
+              backgroundColor: Colors.green,
+              centerTitle: true,
+            ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      width: 300,
+                      height: 200,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey.shade400,
+                                blurRadius: 6,
+                                spreadRadius: 1),
+                          ]),
+                      child: Text(
+                        'Test App',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                      ))
+                ],
+              ),
+            )));
   }
 }
