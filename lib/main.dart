@@ -17,6 +17,7 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
     return MaterialApp(
         theme: ThemeData(fontFamily: "Nunito"),
         home: Scaffold(
+            backgroundColor: Colors.green.shade100,
             appBar: AppBar(
               title: Text(
                 'Uygulamam',
