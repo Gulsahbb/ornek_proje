@@ -60,6 +60,12 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
                         fontWeight: FontWeight.bold,
                         color: Colors.green,
                       ))),
+              IconButton(
+                  onPressed: () => print('İconButton a Tıkladın!'),
+                  icon: Icon(
+                    Icons.ads_click_sharp,
+                    color: Colors.green,
+                  ))
             ],
           ),
         ),
