@@ -15,13 +15,18 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(fontFamily: "Nunito"),
         home: Scaffold(
-      appBar: AppBar(
-        title: Text('Uygulamam'),
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
-      body: Text('Merhaba'),
-    ));
+          appBar: AppBar(
+            title: Text(
+              'Uygulamam',
+              style:
+                  TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+            ),
+            backgroundColor: Colors.green,
+            centerTitle: true,
+          ),
+          body: Text('Merhaba'),
+        ));
   }
 }
