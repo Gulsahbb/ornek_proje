@@ -28,11 +28,10 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
             ),
             body: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                      width: 300,
-                      height: 200,
+                      padding: const EdgeInsets.all(80),
+                      margin: const EdgeInsets.all(80),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.green,
@@ -49,7 +48,27 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 25),
-                      ))
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Image.asset('assets/images/dinoinspace.jpeg',
+                        height: 100),
+                  ),
+                  SizedBox(
+                    height: 80,
+                    width: 200,
+                    child: Card(
+                        color: Colors.green,
+                        elevation: 3,
+                        child: Align(
+                          child: Text(
+                            'Merhaba',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        )),
+                  )
                 ],
               ),
             )));
