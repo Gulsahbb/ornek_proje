@@ -42,9 +42,13 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
           ),
         ),*/
         body: Center(
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text('Merhaba'), Image.asset('assets/images/dino.jpg')],
+            children: [
+              ElevatedButton(
+                  onPressed: () => print('Bana Tıkladın!'),
+                  child: Text('Bana Tıkla'))
+            ],
           ),
         ),
       ),
