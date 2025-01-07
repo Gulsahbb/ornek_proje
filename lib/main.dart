@@ -17,7 +17,6 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
     return MaterialApp(
       theme: ThemeData(fontFamily: "Nunito"),
       home: Scaffold(
-        backgroundColor: Colors.green.shade200,
         appBar: AppBar(
           title: Text(
             'Uygulamam',
@@ -46,8 +45,21 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () => print('Bana Tıkladın!'),
-                  child: Text('Bana Tıkla'))
+                  onPressed: () => print('ElevatedButton a Tıkladın!'),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  child: Text('Bana Tıkla',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ))),
+              TextButton(
+                  onPressed: () => print('TextButton a Tıkladın!'),
+                  child: Text('Bana Tıkla',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ))),
             ],
           ),
         ),
