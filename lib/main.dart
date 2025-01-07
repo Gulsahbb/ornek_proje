@@ -17,16 +17,20 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
     return MaterialApp(
         theme: ThemeData(fontFamily: "Nunito"),
         home: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Uygulamam',
-              style:
-                  TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+            appBar: AppBar(
+              title: Text(
+                'Uygulamam',
+                style:
+                    TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+              ),
+              backgroundColor: Colors.green,
+              centerTitle: true,
             ),
-            backgroundColor: Colors.green,
-            centerTitle: true,
-          ),
-          body: Text('Merhaba'),
-        ));
+            /*      body: Image.network(
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrmdIv9U6Vp4y89bmbMn6qxhGP9B_rS82OWw&s",
+            width: 200,
+            fit: BoxFit.fill,
+          ),*/
+            body: Image.asset('assets/images/dino.jpg')));
   }
 }
