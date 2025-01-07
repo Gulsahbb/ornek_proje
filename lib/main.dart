@@ -16,6 +16,11 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+      appBar: AppBar(
+        title: Text('Uygulamam'),
+        backgroundColor: Colors.green,
+        centerTitle: true,
+      ),
       body: Text('Merhaba'),
     ));
   }
