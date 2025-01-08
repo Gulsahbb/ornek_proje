@@ -7,7 +7,7 @@ class TextLearnView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text(('Buy The Best One' * 10),
+          child: Text('Buy The Best One',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
