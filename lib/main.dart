@@ -71,6 +71,8 @@ Uygulama çalışır ama görünümü nasıl belirtmek gerekiyor.
                   )
                 ],
               ),
-            )));
+            )
+        // TextField() Eklenecek.
+        ));
   }
 }
