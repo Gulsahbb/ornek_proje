@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ornek_proje/101/container_sized_box_learn.dart';
+
+// import 'package:ornek_proje/101/container_sized_box_learn.dart';
+import 'package:ornek_proje/101/scaffold_learn.dart';
+// import 'package:ornek_proje/101/text_learn_view.dart';
 
 void main() {
   runApp(const Uygulamam());
@@ -14,6 +17,6 @@ class Uygulamam extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData.dark(),
-        home: ContainerSizedBoxLearn());
+        home: ScaffoldLearnView());
   }
 }
