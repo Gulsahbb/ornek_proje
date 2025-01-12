@@ -18,16 +18,30 @@ class ContainerSizedBoxLearn extends StatelessWidget {
                 maxWidth: 150, minWidth: 100, maxHeight: 100),
             padding: const EdgeInsets.all(10),
             margin: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Colors.teal,
-                // shape: BoxShape.circle,
-                gradient: const LinearGradient(
-                    colors: [Colors.grey, Colors.orangeAccent]),
-                border: Border.all(width: 5, color: Colors.lightGreenAccent)),
+            decoration: ProjectUtility.boxDecoration,
             child: Text('a' * 50),
           )
         ],
       ),
     );
   }
+}
+
+class ProjectUtility {
+  static BoxDecoration boxDecoration = BoxDecoration(
+      color: Colors.teal,
+      // shape: BoxShape.circle,
+      gradient:
+          const LinearGradient(colors: [Colors.grey, Colors.orangeAccent]),
+      border: Border.all(width: 5, color: Colors.lightGreenAccent));
+}
+
+class ProjectContainerDecoration extends BoxDecoration {
+  ProjectContainerDecoration()
+      : super(
+            color: Colors.teal,
+            // shape: BoxShape.circle,
+            gradient: const LinearGradient(
+                colors: [Colors.grey, Colors.orangeAccent]),
+            border: Border.all(width: 5, color: Colors.lightGreenAccent));
 }
