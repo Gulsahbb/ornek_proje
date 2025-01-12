@@ -46,7 +46,7 @@ class ProjectStyles {
       wordSpacing: 2,
       letterSpacing: 4,
       fontStyle: FontStyle.italic,
-      fontSize: 16,
+      fontSize: 15,
       fontWeight: FontWeight.bold);
 }
 
