@@ -27,7 +27,11 @@ class TextLearnView extends StatelessWidget {
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: ProjectStyles.welcomeStyle)
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineLarge
+                  ?.copyWith(color: Colors.indigoAccent))
+          // En doğru yöntem tema üzerinden stilleri yazmak.
         ],
       )),
     );
