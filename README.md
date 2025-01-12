@@ -1,5 +1,5 @@
 # ornek_proje
-
+New Branch Açıldı.
 A new Flutter project.
 
 ## Getting Started
