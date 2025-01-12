@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TextLearnView extends StatelessWidget {
-  const TextLearnView({super.key});
+  TextLearnView({super.key});
   final String name = 'Gulsah';
-  final String name2 = 'Ayse';
+  final ProjectKeys keys = ProjectKeys();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,26 +11,26 @@ class TextLearnView extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Welcome $name',
+          Text(keys.welcome,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: TextStyle(
                   decoration: TextDecoration.underline,
-                  color: Colors.pinkAccent,
+                  color: ProjectColors.welcomeColor,
                   wordSpacing: 2,
                   letterSpacing: 4,
                   fontStyle: FontStyle.italic,
                   fontSize: 16,
                   fontWeight: FontWeight.bold)),
-          Text('Hello $name2',
+          Text('Hello $name',
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
                   .headlineLarge
-                  ?.copyWith(color: Colors.indigoAccent))
+                  ?.copyWith(color: ProjectColors.welcomeColor))
           // En doğru yöntem tema üzerinden stilleri yazmak.
         ],
       )),
@@ -42,10 +42,19 @@ class TextLearnView extends StatelessWidget {
 class ProjectStyles {
   static TextStyle welcomeStyle = TextStyle(
       decoration: TextDecoration.underline,
-      color: const Color.fromARGB(255, 201, 108, 139),
+      color: ProjectColors.welcomeColor,
       wordSpacing: 2,
       letterSpacing: 4,
       fontStyle: FontStyle.italic,
       fontSize: 16,
       fontWeight: FontWeight.bold);
+}
+
+// Project Color
+class ProjectColors {
+  static Color welcomeColor = Colors.orangeAccent;
+}
+
+class ProjectKeys {
+  final String welcome = 'Hello. This is A New Flutter Test Project';
 }
