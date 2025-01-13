@@ -13,14 +13,18 @@ class ScaffoldLearnView extends StatelessWidget {
       ),
       body: const Text('Merhaba', style: TextStyle(color: Colors.black)),
       backgroundColor: Colors.white60,
+      extendBody: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.blueGrey,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      drawer: const Drawer(),
       bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.abc_outlined), label: 'a'),
-        BottomNavigationBarItem(icon: Icon(Icons.abc_outlined), label: 'b'),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle), label: 'Account'),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.manage_accounts_outlined), label: 'Settings'),
       ]),
     );
   }
