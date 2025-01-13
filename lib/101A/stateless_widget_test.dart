@@ -33,18 +33,7 @@ class StatelessWidgetTest extends StatelessWidget {
         child: Container(
           width: 300,
           height: 200,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withValues(),
-                spreadRadius: 1,
-                blurRadius: 5,
-                offset: Offset(0, 2),
-              )
-            ],
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.deepPurple.shade200,
-          ),
+          decoration: ProjectDecoration.boxDecoration,
           child: Text('Merhaba'),
         ),
       ),
@@ -64,4 +53,19 @@ class StatelessWidgetTest extends StatelessWidget {
       ),
     );
   }
+}
+
+class ProjectDecoration {
+  static BoxDecoration boxDecoration = BoxDecoration(
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withValues(),
+        spreadRadius: 1,
+        blurRadius: 5,
+        offset: Offset(0, 2),
+      )
+    ],
+    borderRadius: BorderRadius.circular(10),
+    color: Colors.deepPurple.shade200,
+  );
 }
