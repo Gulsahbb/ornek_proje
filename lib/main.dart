@@ -6,11 +6,11 @@ import 'package:ornek_proje/101A/stateless_widget_test.dart';
 // import 'package:ornek_proje/101/text_learn_view.dart';
 
 void main() {
-  runApp(const Uygulamam());
+  runApp(const OrnekProject());
 }
 
-class Uygulamam extends StatelessWidget {
-  const Uygulamam({super.key});
+class OrnekProject extends StatelessWidget {
+  const OrnekProject({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +18,6 @@ class Uygulamam extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData.dark(),
-        // home: ScaffoldLearnView())
         home: StatelessWidgetTest());
   }
 }
-/*
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData.dark(),
-        home: ScaffoldLearnView());
-  }
-*/

@@ -11,8 +11,6 @@ class StatelessWidgetTest extends StatelessWidget {
         shadowColor: Colors.deepPurple,
       ),
       appBar: AppBar(
-        /* leading: IconButton(
-            icon: Icon(Icons.menu, color: Colors.white), onPressed: () {}),*/
         title: Text(
           'Deneme',
           style: TextStyle(
@@ -30,22 +28,72 @@ class StatelessWidgetTest extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Container(
-          width: 300,
-          height: 200,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withValues(),
-                spreadRadius: 1,
-                blurRadius: 5,
-                offset: Offset(0, 2),
-              )
-            ],
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.deepPurple.shade200,
-          ),
-          child: Text('Merhaba'),
+        child: Column(
+          children: [
+            SizedBox(height: 150),
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withValues(),
+                    spreadRadius: 1,
+                    blurRadius: 5,
+                    offset: Offset(0, 2),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.deepPurple.shade200,
+              ),
+              child: Text(
+                'Giriş Yap',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    textBaseline: TextBaseline.alphabetic),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+                width: 300,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withValues(),
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 2),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.deepPurple.shade200,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Kullanıcı Adı',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          textBaseline: TextBaseline.alphabetic),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(fillColor: Colors.white),
+                    ),
+                    Text(
+                      'Şifre',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          textBaseline: TextBaseline.alphabetic),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(fillColor: Colors.white),
+                    )
+                  ],
+                )),
+          ],
         ),
       ),
       backgroundColor: Colors.white,
