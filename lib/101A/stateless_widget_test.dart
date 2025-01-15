@@ -8,7 +8,7 @@ class StatelessWidgetTest extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(
         backgroundColor: Colors.white54,
-        shadowColor: Colors.deepPurple,
+        shadowColor: Colors.blueGrey,
       ),
       appBar: AppBar(
         title: Text(
@@ -18,88 +18,103 @@ class StatelessWidgetTest extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.deepPurple.shade200,
+        backgroundColor: Colors.blueGrey,
         actions: [
           Icon(
-            Icons.arrow_forward_rounded,
+            Icons.star,
+            color: Colors.white,
+            weight: 20,
+          ),
+          Icon(
+            Icons.star,
             color: Colors.white,
             weight: 20,
           )
         ],
       ),
       body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 150),
-            Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withValues(),
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: Offset(0, 2),
-                  )
-                ],
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.deepPurple.shade200,
-              ),
-              child: Text(
+        child: Container(
+          width: 400,
+          height: 280,
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
+          decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withValues(),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(0, 2),
+                )
+              ]),
+          child: Column(
+            children: [
+              Text(
                 'Giriş Yap',
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    textBaseline: TextBaseline.alphabetic),
-              ),
-            ),
-            SizedBox(height: 10),
-            Container(
-                width: 300,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withValues(),
-                      spreadRadius: 1,
-                      blurRadius: 5,
-                      offset: Offset(0, 2),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.deepPurple.shade200,
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-                child: Column(
-                  children: [
-                    Text(
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    label: Text(
                       'Kullanıcı Adı',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          textBaseline: TextBaseline.alphabetic),
+                        color: Colors.white,
+                      ),
                     ),
-                    TextField(
-                      decoration: InputDecoration(fillColor: Colors.white),
+                    icon: Icon(
+                      Icons.login_outlined,
+                      color: Colors.white,
                     ),
-                    Text(
-                      'Şifre',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          textBaseline: TextBaseline.alphabetic),
+                    fillColor: Colors.white24,
+                    filled: true,
+                    enabledBorder: UnderlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide(color: Colors.grey)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide(color: Colors.white))),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  label: Text(
+                    'Şifre',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
-                    TextField(
-                      decoration: InputDecoration(fillColor: Colors.white),
-                    )
-                  ],
-                )),
-          ],
+                  ),
+                  icon: Icon(
+                    Icons.password,
+                    color: Colors.white,
+                  ),
+                  fillColor: Colors.white24,
+                  filled: true,
+                  enabledBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(color: Colors.grey)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide(color: Colors.white)),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.deepPurple.shade200,
+        backgroundColor: Colors.blueGrey,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
