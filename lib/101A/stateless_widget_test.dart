@@ -128,5 +128,3 @@ class StatelessWidgetTest extends StatelessWidget {
     );
   }
 }
-/* Login PAGE
-TextField,SizedBox,CheckBox,Container*/
