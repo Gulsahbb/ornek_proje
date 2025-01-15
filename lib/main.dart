@@ -17,7 +17,7 @@ class OrnekProject extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData.dark(),
+        theme: ThemeData.light(),
         home: ButtonLearn());
   }
 }
