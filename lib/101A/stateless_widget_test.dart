@@ -133,9 +133,9 @@ class _StatelessWidgetTestState extends State<StatelessWidgetTest> {
                         activeColor: Colors.white,
                         checkColor: Colors.blueGrey,
                         value: _dogruMu,
-                        onChanged: (_val) {
+                        onChanged: (val) {
                           setState(() {
-                            _dogruMu = _val!;
+                            _dogruMu = val!;
                           });
                         }),
                     Text('Beni Hatırla', style: TextStyle(color: Colors.white)),
