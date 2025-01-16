@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 // import 'package:ornek_proje/101/appbar_learn.dart';
-import 'package:ornek_proje/101/icon_learn.dart';
+// import 'package:ornek_proje/101/icon_learn.dart';
+import 'package:ornek_proje/101A/stateless_widget_test.dart';
 // import 'package:ornek_proje/101/button_learn.dart';
-// import 'package:ornek_proje/101A/stateless_widget_test.dart';
 // import 'package:ornek_proje/101/container_sized_box_learn.dart';
 // import 'package:ornek_proje/101/scaffold_learn.dart';
 // import 'package:ornek_proje/101/text_learn_view.dart';
@@ -20,6 +20,16 @@ class OrnekProject extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
+        theme: ThemeData.dark(),
+        home: StatelessWidgetTest());
+  }
+}
+/*
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
         theme: ThemeData.dark().copyWith(
             appBarTheme: AppBarTheme(
           centerTitle: true,
@@ -29,4 +39,4 @@ class OrnekProject extends StatelessWidget {
         )),
         home: IconLearn());
   }
-}
+}*/
