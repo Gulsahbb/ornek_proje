@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/testg/screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,28 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Test G Demo',
+      title: 'İnsan Hakları Platformu',
       debugShowCheckedModeBanner: false,
-      home: Deneme(),
-    );
-  }
-}
-
-class Deneme extends StatelessWidget {
-  const Deneme({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: Text('TEST', style: TextStyle(color: Colors.white)),
+      theme: ThemeData(
+        primaryColor: Colors.blueAccent,
       ),
-      body: SizedBox(
-        width: 300,
-        height: 300,
-        child: Text('Deneme Sayfası'),
-      ),
+      home: HomeScreen(),
     );
   }
 }
