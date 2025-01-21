@@ -9,6 +9,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Test G Demo',
+      debugShowCheckedModeBanner: false,
+      home: Deneme(),
+    );
+  }
+}
+
+class Deneme extends StatelessWidget {
+  const Deneme({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
