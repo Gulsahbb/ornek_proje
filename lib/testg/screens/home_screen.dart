@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                         baslik: etkinlik['baslik']!,
                         tarih: etkinlik['tarih']!,
                         aciklama:
-                            'Etkinlik hakkında detaylı açıklama. Lütfen Okuyunuz.'),
+                            'Etkinlik hakkında detaylı açıklama. Lütfen dikkatli okuyunuz.'),
                   ),
                 );
               },
@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
               subtitle: Text('Tarih : ${etkinlik['tarih']!}'),
             );
           }),
+      // Elle veri girdiğimde
       /*   ListView(
         children: [
           ListTile(
