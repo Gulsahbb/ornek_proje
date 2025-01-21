@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/testg/screens/event_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,6 +22,18 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final etkinlik = etkinlikler[index];
             return ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventDetailScreen(
+                        baslik: etkinlik['baslik']!,
+                        tarih: etkinlik['tarih']!,
+                        aciklama:
+                            'Etkinlik hakkında detaylı açıklama. Lütfen Okuyunuz.'),
+                  ),
+                );
+              },
               leading: Icon(Icons.event),
               title: Text(etkinlik['baslik']!),
               subtitle: Text('Tarih : ${etkinlik['tarih']!}'),
