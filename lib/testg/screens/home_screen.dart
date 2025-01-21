@@ -7,10 +7,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, String>> etkinlikler = [
-      {'baslik': 'Etkinlik 1 : Kadın Hakları Semineri', 'tarih': '22/01/2025'},
+      {
+        'baslik': 'Etkinlik 1 : Kadın Hakları Semineri',
+        'tarih': '22/01/2025',
+        'aciklama': 'Detaylı bilgi için lütfen açıklamayı okuyun.',
+        'yer': 'Uzaktan'
+      },
       {
         'baslik': 'Etkinlik 2 : İklim Değişikliği Protestosu',
-        'tarih': '23/02/2025'
+        'aciklama':
+            'Etkinlik hakkında detaylı açıklama. Lütfen dikkatli okuyunuz.',
+        'tarih': '23/02/2025',
+        'yer': 'İstanbul'
       }
     ];
     return Scaffold(
@@ -29,8 +37,8 @@ class HomeScreen extends StatelessWidget {
                     builder: (context) => EventDetailScreen(
                         baslik: etkinlik['baslik']!,
                         tarih: etkinlik['tarih']!,
-                        aciklama:
-                            'Etkinlik hakkında detaylı açıklama. Lütfen dikkatli okuyunuz.'),
+                        aciklama: etkinlik['aciklama']!,
+                        yer: etkinlik['yer']!),
                   ),
                 );
               },
