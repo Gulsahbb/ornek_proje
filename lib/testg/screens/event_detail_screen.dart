@@ -42,7 +42,24 @@ class EventDetailScreen extends StatelessWidget {
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.normal),
-            )
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                            title: Text('Etkinliğe Katıldın!'),
+                            content: Text(
+                                'Etkinliğe katılım isteği başarıyla tamamlandı.'),
+                            actions: [
+                              TextButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text('Tamam'))
+                            ],
+                          ));
+                },
+                child: Text('Katıl'))
           ],
         ),
       ),
