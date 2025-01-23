@@ -78,9 +78,7 @@ class SignupScreen extends StatelessWidget {
             ),
             Center(
                 child: TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () {},
               child: Text(
                 'Zaten bir hesabınız var mı? Giriş Yap',
                 style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
