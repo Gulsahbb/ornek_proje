@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/testg/screens/login_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -78,7 +79,10 @@ class SignupScreen extends StatelessWidget {
             ),
             Center(
                 child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
               child: Text(
                 'Zaten bir hesabınız var mı? Giriş Yap',
                 style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
@@ -90,3 +94,6 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
+
+
+// TODO BUTONLARA TIKLADIĞIMDA AÇILAN SAYFALARI SİLME İŞLEMİNİ UNUTMA!!!!!

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/first_screen.dart';
-// import 'package:ornek_proje/testg/screens/home_screen.dart';
-// import 'package:ornek_proje/testg/screens/home_screen.dart';
-// import 'package:ornek_proje/testg/screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
