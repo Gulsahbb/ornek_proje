@@ -8,44 +8,75 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Giriş Yap'),
+      ),
       body: Center(
-        child: Container(
-          width: 300,
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Hoş Geldin!',
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  labelText: 'E-posta',
+                  border: OutlineInputBorder(),
+                ),
               ),
-              Text('Lütfen Bilgilerinizi Giriniz'),
-              Text('Kullanıcı Adı / E - Mail'),
-              TextField(),
-              Text('Şifre'),
-              TextField(),
-              Row(
-                children: [
-                  // Checkbox(value: value, onChanged: onChanged),
-                  // Text('Beni Hatırla'),
-                  // TextButton('Şifremi Unuttum')
-                ],
+              SizedBox(height: 20),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Şifre',
+                  border: OutlineInputBorder(),
+                ),
               ),
-              ElevatedButton(
-                  // Stiller girilecek.
+              SizedBox(height: 10),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    // Şifremi unuttum ekranına yönlendirme
+                    print('Şifremi unuttum tıklandı!');
+                  },
+                  child: Text(
+                    'Şifremi Unuttum?',
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
+              Center(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                  ),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
-                  child: Text('Giriş Yap')),
-              TextButton(
-                  // Stiller girilecek.
+                  child: Text(
+                    'Giriş Yap',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+              ),
+              Center(
+                child: TextButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SignupScreen()));
+                      context,
+                      MaterialPageRoute(builder: (context) => SignupScreen()),
+                    );
                   },
-                  child: Text('Hesabın yok mu? Kayıt ol')),
+                  child: Text(
+                    'Hesabınız yok mu? Kayıt Ol',
+                    style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
