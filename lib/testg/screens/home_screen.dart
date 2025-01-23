@@ -24,7 +24,61 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('İnsan Hakları Etkinlikleri'),
-      ), //Text(' İnsan Hakları Platformuna Hoşgeldin!')
+        actions: [
+          Icon(Icons.notifications),
+        ],
+      ),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Kullanıcı Adı ve profili'),
+                    SizedBox(height: 30),
+                    Icon(
+                      Icons.account_circle,
+                      size: 50.0,
+                    )
+                  ])),
+          ListTile(
+            title: Text('Etkinlikler'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Haberler'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Rozetlerim'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(height: 300),
+          ListTile(
+            title: Text('Ayarlar'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: Text('Yardım'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      )), //Text(' İnsan Hakları Platformuna Hoşgeldin!')
       body: ListView.builder(
           itemCount: etkinlikler.length,
           itemBuilder: (context, index) {
