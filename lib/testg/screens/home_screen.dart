@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('İnsan Hakları Etkinlikleri'),
         actions: [
-          Icon(Icons.notifications),
+          Icon(Icons.account_box),
         ],
       ),
       drawer: Drawer(
