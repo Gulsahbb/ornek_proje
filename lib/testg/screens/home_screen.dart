@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/event_detail_screen.dart';
+import 'package:ornek_proje/testg/screens/event_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,7 +50,8 @@ class HomeScreen extends StatelessWidget {
           ListTile(
             title: Text('Etkinlikler'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => EventScreen()));
             },
           ),
           ListTile(

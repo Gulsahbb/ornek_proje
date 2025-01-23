@@ -8,15 +8,19 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: Container(
           height: 300,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('İnsan Hakları Platformu veya varsa LOGO'),
-              Text('Burada bir metin olsun'),
+              Text('İnsan Hakları Platformu'),
+              Text('İnsan Haklarını Güçlendiren Bir Platform'),
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 3,
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/testg/screens/home_screen.dart';
+import 'package:ornek_proje/testg/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,7 +17,6 @@ class LoginScreen extends StatelessWidget {
             children: [
               Text(
                 'Hoş Geldin!',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               Text('Lütfen Bilgilerinizi Giriniz'),
               Text('Kullanıcı Adı / E - Mail'),
@@ -32,13 +33,17 @@ class LoginScreen extends StatelessWidget {
               ElevatedButton(
                   // Stiller girilecek.
                   onPressed: () {
-                    // Doğru Bilgi Girildiğinde Ana Sayfaya Yönlendirecek.
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Text('Giriş Yap')),
               TextButton(
                   // Stiller girilecek.
                   onPressed: () {
-                    // Kayıt Ol Ekranına Yönlendirecek.
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SignupScreen()));
                   },
                   child: Text('Hesabın yok mu? Kayıt ol')),
             ],
