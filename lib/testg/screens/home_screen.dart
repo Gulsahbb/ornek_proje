@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
           itemCount: etkinlikler.length,
           itemBuilder: (context, index) {
             final etkinlik = etkinlikler[index];
-            return ListTile(
+            /*    return ListTile(
               onTap: () {
                 Navigator.push(
                   context,
@@ -45,6 +45,46 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.event),
               title: Text(etkinlik['baslik']!),
               subtitle: Text('Tarih : ${etkinlik['tarih']!}'),
+            );*/
+            return Card(
+              margin: EdgeInsets.all(8),
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EventDetailScreen(
+                          baslik: etkinlik['baslik']!,
+                          tarih: etkinlik['tarih']!,
+                          aciklama: etkinlik['aciklama']!,
+                          yer: etkinlik['yer']!),
+                    ),
+                  );
+                },
+                hoverColor: Colors.grey.shade300,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(etkinlik['baslik']!),
+                      Row(children: [
+                        Icon(Icons.calendar_today),
+                        SizedBox(width: 5),
+                        Text(etkinlik['tarih']!),
+                        Spacer(),
+                        Icon(Icons.location_on),
+                        SizedBox(width: 5),
+                        Text(etkinlik['yer']!)
+                      ]),
+                    ],
+                  ),
+                ),
+              ),
             );
           }),
       // Elle veri girdiğimde
