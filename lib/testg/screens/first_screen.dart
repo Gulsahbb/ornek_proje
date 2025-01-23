@@ -8,19 +8,39 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.teal.shade200,
       body: Center(
-        child: Container(
-          height: 300,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('İnsan Hakları Platformu'),
-              Text('İnsan Haklarını Güçlendiren Bir Platform'),
+              Text('İnsan Hakları Platformu',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.center),
+              SizedBox(height: 10),
+              Text('İnsan Haklarını Güçlendiren Bir Platform',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey.shade600,
+                  ),
+                  textAlign: TextAlign.center),
+              SizedBox(height: 20),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    elevation: 3,
-                  ),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      elevation: 3,
+                      foregroundColor: Colors.black,
+                      textStyle: TextStyle(fontSize: 18)),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -28,12 +48,15 @@ class FirstScreen extends StatelessWidget {
                             builder: (context) => SignupScreen()));
                   },
                   child: Text('Kayıt Ol')),
+              SizedBox(height: 10),
               TextButton(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => LoginScreen()));
                   },
-                  child: Text('Veya Giriş Yap'))
+                  child: Text('Veya Giriş Yap',
+                      style:
+                          TextStyle(fontSize: 16, color: Colors.grey.shade700)))
             ],
           ),
         ),
