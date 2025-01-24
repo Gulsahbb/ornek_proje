@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/login_screen.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool sartKabulu = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,16 +67,37 @@ class SignupScreen extends StatelessWidget {
                       borderSide: BorderSide(color: Colors.black))),
             ),
             SizedBox(height: 30),
+            Row(
+              children: [
+                Checkbox(
+                  value: sartKabulu,
+                  onChanged: (value) {
+                    setState(() {
+                      sartKabulu = value ?? false;
+                    });
+                  },
+                ),
+                Expanded(
+                  child: Text(
+                    "Kayıt olarak kullanım şartlarını kabul etmiş sayılırsınız.",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black),
-                onPressed: () {
-                  // Kayıt işlemi için bir fonksiyon
-                  print('Kayıt İşlemi Başlatıldı!');
-                },
+                onPressed: sartKabulu
+                    ? () {
+                        // Kullanım şartları kabul edildiyse kayıt işlemi yapılabilir
+                        print('Kayıt ol işlemi yapılıyor...');
+                      }
+                    : null,
                 child: Text(
                   'Kayıt Ol',
                   style: TextStyle(fontSize: 18),
