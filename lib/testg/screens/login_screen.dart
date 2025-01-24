@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ornek_proje/testg/screens/forgot_password_screen.dart';
 import 'package:ornek_proje/testg/screens/home_screen.dart';
 import 'package:ornek_proje/testg/screens/signup_screen.dart';
 
@@ -51,8 +52,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   Spacer(),
                   TextButton(
                     onPressed: () {
-                      // Şifremi unuttum ekranına yönlendirme
-                      print('Şifremi unuttum tıklandı!');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgotPasswordScreen()));
                     },
                     child: Text(
                       'Şifremi Unuttum?',
