@@ -51,16 +51,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text('Beni Hatırla'),
                   Spacer(),
                   TextButton(
+                    style: TextButton.styleFrom(foregroundColor: Colors.black),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => ForgotPasswordScreen()));
                     },
-                    child: Text(
-                      'Şifremi Unuttum?',
-                      style: TextStyle(color: Colors.blueAccent),
-                    ),
+                    child: Text('Şifremi Unuttum?'),
                   ),
                 ],
               ),
