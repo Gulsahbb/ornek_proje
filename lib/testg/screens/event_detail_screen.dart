@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ornek_proje/testg/models/participation_model.dart';
+// import 'package:ornek_proje/testg/models/participation_model.dart';
 
 class EventDetailScreen extends StatelessWidget {
   final String baslik;
@@ -15,7 +15,7 @@ class EventDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Participation> katilimListesi = [];
+    //  List<Participation> katilimListesi = [];
     return Scaffold(
       appBar: AppBar(
         title: Text(baslik),
@@ -45,8 +45,7 @@ class EventDetailScreen extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                   fontWeight: FontWeight.normal),
             ),
-            //SizedBox(height: 20),
-            Spacer(),
+            /*   Spacer(),
             ElevatedButton(
                 onPressed: () {
                   katilimListesi.add(Participation(
@@ -64,7 +63,7 @@ class EventDetailScreen extends StatelessWidget {
                             ],
                           ));
                 },
-                child: Text('Katıl'))
+                child: Text('Katıl'))*/
           ],
         ),
       ),

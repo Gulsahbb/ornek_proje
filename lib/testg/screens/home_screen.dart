@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/event_detail_screen.dart';
-import 'package:ornek_proje/testg/screens/event_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,144 +23,70 @@ class HomeScreen extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('İnsan Hakları Etkinlikleri'),
-        actions: [
-          Icon(Icons.account_box),
-        ],
+        title: const Text(
+          'İnsan Hakları Platformu',
+          style: TextStyle(
+              color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
       ),
-      drawer: Drawer(
-          child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Kullanıcı Adı ve profili'),
-                    SizedBox(height: 30),
-                    Icon(
-                      Icons.account_circle,
-                      size: 50.0,
-                    )
-                  ])),
-          ListTile(
-            title: Text('Etkinlikler'),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => EventScreen()));
-            },
-          ),
-          ListTile(
-            title: Text('Haberler'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('Rozetlerim'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          SizedBox(height: 300),
-          ListTile(
-            title: Text('Ayarlar'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('Yardım'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          )
-        ],
-      )), //Text(' İnsan Hakları Platformuna Hoşgeldin!')
       body: ListView.builder(
-          itemCount: etkinlikler.length,
-          itemBuilder: (context, index) {
-            final etkinlik = etkinlikler[index];
-            /*    return ListTile(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => EventDetailScreen(
-                        baslik: etkinlik['baslik']!,
-                        tarih: etkinlik['tarih']!,
-                        aciklama: etkinlik['aciklama']!,
-                        yer: etkinlik['yer']!),
-                  ),
-                );
-              },
-              leading: Icon(Icons.event),
-              title: Text(etkinlik['baslik']!),
-              subtitle: Text('Tarih : ${etkinlik['tarih']!}'),
-            );*/
-            return Card(
-              margin: EdgeInsets.all(8),
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EventDetailScreen(
-                          baslik: etkinlik['baslik']!,
-                          tarih: etkinlik['tarih']!,
-                          aciklama: etkinlik['aciklama']!,
-                          yer: etkinlik['yer']!),
-                    ),
-                  );
-                },
-                hoverColor: Colors.grey.shade300,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(etkinlik['baslik']!),
-                      Row(children: [
-                        Icon(Icons.calendar_today),
-                        SizedBox(width: 5),
-                        Text(etkinlik['tarih']!),
-                        Spacer(),
-                        Icon(Icons.location_on),
-                        SizedBox(width: 5),
-                        Text(etkinlik['yer']!)
-                      ]),
-                    ],
+        itemCount: etkinlikler.length,
+        itemBuilder: (context, index) {
+          final etkinlik = etkinlikler[index];
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EventDetailScreen(
+                    baslik: etkinlik['baslik']!,
+                    tarih: etkinlik['tarih']!,
+                    aciklama: etkinlik['aciklama']!,
+                    yer: etkinlik['yer']!,
                   ),
                 ),
+              );
+            },
+            child: Card(
+              margin: EdgeInsets.all(10),
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      etkinlik['baslik']!,
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        Text(
+                          'Tarih: ${etkinlik['tarih']}',
+                          style: TextStyle(fontSize: 14),
+                        ),
+                        Spacer(),
+                        Text(
+                          'Yer: ${etkinlik['yer']}',
+                          style: TextStyle(fontSize: 14),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      etkinlik['aciklama']!,
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
+                ),
               ),
-            );
-          }),
-      // Elle veri girdiğimde
-      /*   ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.event),
-            title: Text('Etkinlik 1 : Kadın Hakları Semineri'),
-            subtitle: Text('Tarih : 22/01/2025'),
-          ),
-          ListTile(
-            leading: Icon(Icons.event),
-            title: Text('Etkinlik 2 : İklim Değişikliği Protestosu'),
-            subtitle: Text('Tarih : 23/02/2025'),
-          ),
-        ],
-      ),*/
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
-      ]),
+            ),
+          );
+        },
+      ),
     );
   }
 }
