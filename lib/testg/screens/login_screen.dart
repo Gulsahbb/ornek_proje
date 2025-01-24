@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/home_screen.dart';
 import 'package:ornek_proje/testg/screens/signup_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool beniHatirla = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +38,30 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Align(
+              Row(
+                children: [
+                  Checkbox(
+                      value: beniHatirla,
+                      onChanged: (value) {
+                        setState(() {
+                          beniHatirla = value ?? false;
+                        });
+                      }),
+                  Text('Beni Hatırla'),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () {
+                      // Şifremi unuttum ekranına yönlendirme
+                      print('Şifremi unuttum tıklandı!');
+                    },
+                    child: Text(
+                      'Şifremi Unuttum?',
+                      style: TextStyle(color: Colors.blueAccent),
+                    ),
+                  ),
+                ],
+              ),
+              /*  Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {
@@ -44,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.blueAccent),
                   ),
                 ),
-              ),
+              ),*/
               SizedBox(height: 30),
               Center(
                 child: ElevatedButton(
