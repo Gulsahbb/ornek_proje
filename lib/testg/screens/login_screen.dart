@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/forgot_password_screen.dart';
 import 'package:ornek_proje/testg/screens/home_screen.dart';
 import 'package:ornek_proje/testg/screens/signup_screen.dart';
+import 'package:ornek_proje/testg/theme/app_theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,99 +12,192 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool beniHatirla = false;
+  bool _rememberMe = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Giriş Yap'),
+        elevation: 0,
+        backgroundColor: AppTheme.accentColor,
+        toolbarHeight: 100, // AppBar yüksekliği
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
           child: Column(
             children: [
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'E-posta',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 20),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Şifre',
-                  border: OutlineInputBorder(),
+              // Başlık
+              Text(
+                "Hoş Geldiniz!",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: AppTheme.textColor,
+                  fontFamily: 'Montserrat',
                 ),
               ),
               SizedBox(height: 10),
+              Text(
+                "İnsan hakları platformumuza giriş yapın",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: AppTheme.softGrayColor,
+                  fontFamily: 'Montserrat',
+                ),
+              ),
+              SizedBox(height: 40),
+              // Kullanıcı Adı TextField
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Kullanıcı Adı",
+                  labelStyle: TextStyle(color: AppTheme.textColor),
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon:
+                      Icon(Icons.person_outline, color: AppTheme.textColor),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.softGrayColor,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.softGrayColor,
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.textColor,
+                      width: 1.8,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              // Şifre TextField
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: "Şifre",
+                  labelStyle: TextStyle(color: AppTheme.textColor),
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon:
+                      Icon(Icons.lock_outline, color: AppTheme.textColor),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.softGrayColor,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.softGrayColor,
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: BorderSide(
+                      color: AppTheme.textColor,
+                      width: 1.8,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Checkbox(
-                      value: beniHatirla,
-                      onChanged: (value) {
-                        setState(() {
-                          beniHatirla = value ?? false;
-                        });
-                      }),
-                  Text('Beni Hatırla'),
-                  Spacer(),
+                  // Beni Hatırla Checkbox
+                  Row(
+                    children: [
+                      Checkbox(
+                        activeColor: AppTheme.textColor,
+                        value: _rememberMe,
+                        onChanged: (value) {
+                          setState(() {
+                            _rememberMe = value ?? false;
+                          });
+                        },
+                      ),
+                      Text(
+                        "Beni Hatırla",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: AppTheme.textColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Şifremi Unuttum Butonu
                   TextButton(
-                    style: TextButton.styleFrom(foregroundColor: Colors.black),
+                    style: TextButton.styleFrom(
+                        textStyle:
+                            TextStyle(decoration: TextDecoration.underline)),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => ForgotPasswordScreen()));
                     },
-                    child: Text('Şifremi Unuttum?'),
+                    child: Text(
+                      "Şifremi Unuttum",
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppTheme.textColor,
+                      ),
+                    ),
                   ),
                 ],
               ),
-              /*  Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    // Şifremi unuttum ekranına yönlendirme
-                    print('Şifremi unuttum tıklandı!');
-                  },
-                  child: Text(
-                    'Şifremi Unuttum?',
-                    style: TextStyle(color: Colors.blueAccent),
+              SizedBox(height: 20),
+              // Giriş Yap Butonu
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppTheme.textColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                 ),
-              ),*/
-              SizedBox(height: 30),
-              Center(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
+                child: Center(
                   child: Text(
-                    'Giriş Yap',
-                    style: TextStyle(fontSize: 18),
+                    "Giriş Yap",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
                   ),
                 ),
               ),
-              Center(
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignupScreen()),
-                    );
-                  },
-                  child: Text(
-                    'Hesabınız yok mu? Kayıt Ol',
-                    style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
+              SizedBox(height: 20),
+              TextButton(
+                style: TextButton.styleFrom(
+                    textStyle: TextStyle(decoration: TextDecoration.underline)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignupScreen()));
+                },
+                child: Text(
+                  "Hesabın Yok Mu? Kayıt Ol ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: AppTheme.textColor,
                   ),
                 ),
               ),
@@ -111,6 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
+      backgroundColor: Colors.white,
     );
   }
 }
