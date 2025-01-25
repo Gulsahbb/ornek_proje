@@ -124,3 +124,4 @@ class _SignupScreenState extends State<SignupScreen> {
 
 
 // TODO BUTONLARA TIKLADIĞIMDA AÇILAN SAYFALARI SİLME İŞLEMİNİ UNUTMA!!!!!
+// TODO İlk sayfadaki kayıt ola tıkladın. Sonra hesabın var mı giriş yapa tıkladın geri geldiğinde beni ilk sayfaya yönlendirsin.
