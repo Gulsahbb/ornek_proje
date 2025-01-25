@@ -90,7 +90,7 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 50),
-                // Alt Metin
+                // Alt Kısım Metin
                 Text(
                   "Haklarımız için bir adım daha ileriye!",
                   textAlign: TextAlign.center,
