@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ornek_proje/testg/screens/home_screen.dart';
-// import 'package:ornek_proje/testg/screens/first_screen.dart';
+
+import 'package:ornek_proje/testg/screens/first_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blueAccent,
       ),
-      home: HomeScreen(),
+      home: FirstScreen(),
     );
   }
 }
