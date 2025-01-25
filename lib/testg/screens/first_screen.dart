@@ -9,6 +9,11 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppTheme.accentColor,
+        toolbarHeight: 100,
+      ),
       backgroundColor: AppTheme.backgroundColor,
       body: Center(
         child: SingleChildScrollView(
@@ -49,7 +54,7 @@ class FirstScreen extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.primaryColor,
+                    backgroundColor: AppTheme.textColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
