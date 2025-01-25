@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ornek_proje/testg/screens/login_screen.dart';
 import 'package:ornek_proje/testg/screens/signup_screen.dart';
+import 'package:ornek_proje/testg/theme/app_theme.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -8,100 +9,102 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal.shade200,
+      backgroundColor: AppTheme.backgroundColor,
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('İnsan Hakları Platformu',
+        child: SingleChildScrollView(
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+            child: Column(
+              children: [
+                // Uygulama Adı
+                Text(
+                  "İnsan Hakları Platformu",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: AppTheme.textColor,
+                    fontFamily: 'Montserrat',
                   ),
-                  textAlign: TextAlign.center),
-              SizedBox(height: 10),
-              Text('İnsan Haklarını Güçlendiren Bir Platform',
+                ),
+                SizedBox(height: 10),
+                // Slogan
+                Text(
+                  "Adalet, Eşitlik, İnsanlık",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.grey.shade600,
+                    color: AppTheme.softGrayColor,
+                    fontFamily: 'Montserrat',
                   ),
-                  textAlign: TextAlign.center),
-              SizedBox(height: 20),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      elevation: 3,
-                      foregroundColor: Colors.black,
-                      textStyle: TextStyle(fontSize: 18)),
+                ),
+                SizedBox(height: 60),
+                // Giriş Yap Butonu
+                ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SignupScreen()));
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
                   },
-                  child: Text('Kayıt Ol')),
-              SizedBox(height: 10),
-              TextButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  ),
+                  child: Text(
+                    "Giriş Yap",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                // Kayıt Ol Butonu
+                ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignupScreen()),
+                    );
                   },
-                  child: Text('Veya Giriş Yap',
-                      style:
-                          TextStyle(fontSize: 16, color: Colors.grey.shade700)))
-            ],
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  ),
+                  child: Text(
+                    "Kayıt Ol",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 50),
+                // Alt Metin
+                Text(
+                  "Haklarımız için bir adım daha ileriye!",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppTheme.softGrayColor,
+                    fontFamily: 'Montserrat',
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
-
-/*  final screenSize = MediaQuery.of(context).size;
- Container(
-      width: screenSize.width,
-      height: screenSize.height,
-      decoration: BoxDecoration(
-          color: Colors.blueGrey,
-          image: DecorationImage(
-              /*   colorFilter: ColorFilter.mode(
-                  Colors.black.withValues(
-                    colorSpace: ColorSpace.sRGB,
-                  ),
-                  BlendMode.dstATop),*/
-              image: NetworkImage(
-                  'https://plus.unsplash.com/premium_vector-1728823267725-f73df7ba9e7b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
-              fit: BoxFit.cover)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'İnsan Hakları Platformu',
-            style: TextStyle(
-                color: Colors.white, fontSize: 32, fontWeight: FontWeight.bold),
-          ),
-          Text('Burada bir metin olsun'),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignupScreen()));
-              },
-              child: Text('Kayıt Ol')),
-          TextButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
-              },
-              child: Text('Veya Giriş Yap'))
-        ],
-      ),
-    )
- */
