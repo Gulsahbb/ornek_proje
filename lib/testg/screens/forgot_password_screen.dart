@@ -40,6 +40,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               },
             ),
             SizedBox(height: 30),
+            // Bağlantı GÖnder Butonu
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor:
